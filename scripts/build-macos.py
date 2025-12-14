@@ -36,16 +36,16 @@ def run_command(cmd):
 def main():
   """Main build function for macOS"""
   print_status("Building Digital Clock for macOS...", "cyan")
-  
+
   # Check if running on macOS
   if sys.platform != "darwin":
     print_status("This script is designed for macOS only!", "red")
     sys.exit(1)
-  
+
   # Navigate to script directory
   script_dir = Path(__file__).parent + "/.."
   os.chdir(script_dir)
-  
+
   # Check for virtual environment
   venv_python = None
   for venv_path in [".venv", "venv", "env"]:
@@ -54,18 +54,18 @@ def main():
       venv_python = str(python_path)
       print_status(f"Using virtual environment: {venv_path}", "yellow")
       break
-  
+
   if not venv_python:
     venv_python = "python3"
     print_status("Using system Python", "yellow")
-  
+
   # Install PyInstaller
   print_status("Installing PyInstaller...", "yellow")
   success, output = run_command(f"{venv_python} -m pip install PyInstaller")
   if not success:
     print_status(f"Failed to install PyInstaller: {output}", "red")
     sys.exit(1)
-  
+
   # Clean previous builds
   for path in ["dist", "build", "main.spec"]:
     if os.path.exists(path):
@@ -74,7 +74,7 @@ def main():
       else:
         os.remove(path)
       print_status(f"Cleaned {path}", "yellow")
-  
+
   # Create .icns file if it doesn't exist
   icon_icns = Path("assets/icon.icns")
   if not icon_icns.exists():
@@ -91,7 +91,7 @@ def main():
       icon_file = None
   else:
     icon_file = str(icon_icns)
-  
+
   # Build command
   build_cmd = [
     f"{venv_python} -m PyInstaller",
@@ -101,32 +101,32 @@ def main():
     "--name 'Digital Clock'",
     "--osx-bundle-identifier 'com.digitalclock.app'"
   ]
-  
+
   if icon_file:
     build_cmd.append(f"--icon '{icon_file}'")
-  
+
   build_cmd.append("src/main.py")
-  
+
   # Execute build
   print_status("Building macOS app bundle...", "green")
   success, output = run_command(" ".join(build_cmd))
-  
+
   if not success:
     print_status(f"Build failed: {output}", "red")
     sys.exit(1)
-  
+
   # Check if app was created
   app_path = Path("dist/Digital Clock.app")
   if app_path.exists():
     print_status("Build completed successfully!", "green")
     print_status(f"App bundle created: {app_path}", "cyan")
-    
+
     # Create additional Info.plist entries
     plist_path = app_path / "Contents" / "Info.plist"
     if plist_path.exists():
       with open(plist_path, 'rb') as f:
         plist = plistlib.load(f)
-      
+
       # Add additional metadata
       plist.update({
         'CFBundleShortVersionString': '1.0.0',
@@ -136,12 +136,12 @@ def main():
         'LSBackgroundOnly': False,
         'NSHighResolutionCapable': True
       })
-      
+
       with open(plist_path, 'wb') as f:
         plistlib.dump(plist, f)
-      
+
       print_status("Updated app metadata", "green")
-    
+
     # Ask to run
     try:
       run_app = input("\nRun the app now? (y/N): ").strip().lower()
@@ -149,7 +149,7 @@ def main():
         subprocess.Popen(['open', str(app_path)])
     except KeyboardInterrupt:
       pass
-    
+
     # Ask to create Applications symlink
     try:
       create_link = input("Create link in Applications folder? (y/N): ").strip().lower()
@@ -162,11 +162,11 @@ def main():
     except (KeyboardInterrupt, OSError) as e:
       if isinstance(e, OSError):
         print_status(f"Failed to create Applications link: {e}", "red")
-  
+
   else:
     print_status("App bundle not found after build!", "red")
     sys.exit(1)
-  
+
   print_status("macOS build process completed!", "green")
 
 if __name__ == "__main__":

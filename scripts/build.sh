@@ -61,7 +61,7 @@ if [ -f "dist/DigitalClock" ]; then
   
   # Make executable
   chmod +x dist/DigitalClock
-  
+
   # Create desktop entry for Linux
   if command -v desktop-file-install >/dev/null 2>&1; then
     read -p $'\nCreate desktop entry? (y/N): ' choice
@@ -80,13 +80,13 @@ EOF
       echo -e "\033[32mDesktop entry created!\033[0m"
     fi
   fi
-  
+
   # Ask if user wants to run the executable
   read -p $'\nRun the executable now? (y/N): ' run_choice
   if [[ "$run_choice" =~ ^[Yy]$ ]]; then
     ./dist/DigitalClock &
   fi
-  
+
 else
   echo -e "\033[31m\nBuild failed! Check the output above for errors.\033[0m"
   exit 1

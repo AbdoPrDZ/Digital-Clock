@@ -128,7 +128,7 @@ class ClockApp(tk.Tk):
           print(f"Error loading font {self.font_path}: {e}")
 
         return "Helvetica"
-        
+
     return Config()
 
 

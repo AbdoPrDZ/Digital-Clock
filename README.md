@@ -94,7 +94,7 @@ Create a `.env` file in the root directory to customize the clock:
 
 ```env
 # Font settings
-CLOCK_FONT=assets/DIGITALDREAM.ttf
+CLOCK_FONT=assets/DynaPuff.ttf
 CLOCK_TEXT_SIZE=30
 CLOCK_DATE_SIZE=22
 
@@ -271,7 +271,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Font: [Digital Dream](https://www.dafont.com/digital-dream.font) by Tara Davis
+- Font: [Dyna Puff](https://fonts.google.com/specimen/DynaPuff) by Tara Davis
 - Icons: Custom designed for this project
 - Inspiration: Various desktop clock applications
 
