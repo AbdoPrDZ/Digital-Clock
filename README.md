@@ -32,8 +32,8 @@ A beautiful, customizable digital clock application built with Python and Tkinte
 
 1. **Clone or Download the repository:**
    ```bash
-   git clone https://github.com/yourusername/digital-clock.git
-   cd digital-clock
+   git clone https://github.com/AbdoPrDZ/Digital-Clock.git
+   cd Digital-Clock
    ```
 
 2. **Create virtual environment (recommended):**
@@ -172,8 +172,8 @@ digital-clock/
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/digital-clock.git
-cd digital-clock
+git clone https://github.com/AbdoPrDZ/Digital-Clock.git
+cd Digital-Clock
 
 # Create virtual environment
 python -m venv .venv
@@ -262,7 +262,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Getting Help
 
-1. Check the [Issues](https://github.com/yourusername/digital-clock/issues) page
+1. Check the [Issues](https://github.com/AbdoPrDZ/digital-clock/issues) page
 2. Create a new issue with:
    - Operating system and version
    - Python version
@@ -277,10 +277,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/digital-clock?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/digital-clock?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/digital-clock)
-![GitHub license](https://img.shields.io/github/license/yourusername/digital-clock)
+![GitHub stars](https://img.shields.io/github/stars/AbdoPrDZ/digital-clock?style=social)
+![GitHub forks](https://img.shields.io/github/forks/AbdoPrDZ/digital-clock?style=social)
+![GitHub issues](https://img.shields.io/github/issues/AbdoPrDZ/digital-clock)
+![GitHub license](https://img.shields.io/github/license/AbdoPrDZ/digital-clock)
 
 ---
 
