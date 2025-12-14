@@ -1,0 +1,125 @@
+# Digital Clock Application .gitignore
+# =====================================
+
+# Build artifacts and distributions
+dist/
+build/
+*.spec
+releases/
+*.egg-info/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Windows specific
+*.exe
+*.msi
+*.lnk
+desktop.ini
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# Linux specific
+.directory
+.Trash-*
+
+# PyInstaller specific
+*.manifest
+*.spec.bak
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.orig
+
+# Application specific
+config.ini
+settings.json
+user_preferences.json
+
+# Font cache
+.fontconfig/
+
+# Package managers
+node_modules/
+npm-debug.log*
+
+# Backup files
+*.backup
+*~
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+
+# Archive files (unless specifically needed)
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+# Documentation builds
+docs/_build/
+site/
+
+# Profile data
+.prof
